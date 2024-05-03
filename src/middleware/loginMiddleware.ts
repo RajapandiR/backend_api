@@ -6,11 +6,10 @@ class MiddlewareClass {
         try {
             if (!req.headers["authorization"]) return Responder.sendFailureUnAuthMessage(Message.notToken404, res)
             const token = req.headers["authorization"].split(' ')[1]
-            let { userId, } = await Jwt.verifyToken(token);
+            let { userId, }: any = await Jwt.verifyToken(token);
             // if (exp > Date.now()) return Responder.sendFailureForbiddenMessage("token expired", res)
             let user = await UserModel.find({ _id: userId }, { password: 0 });
             if (!user) return Responder.sendFailureUnAuthMessage(Message.unAuth, res)
-            req["user"] = user;
             next()
         } catch (err) {
             return Responder.sendFailureUnAuthMessage(Message.notToken404, res)
