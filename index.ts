@@ -19,7 +19,7 @@ const options: any = {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
 };
-mongoose.connect(process.env.DB_URL, options);
+mongoose.connect(process.env.DB_URL).then(() => console.log("DB Connected")).catch((err) => console.log("err", err));
 
 app.use("/api/user/auth", LoginUserRouter)
 app.use("/api/user", Middleware.loginMiddleware, UserRouter)
