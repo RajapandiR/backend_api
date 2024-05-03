@@ -5,7 +5,7 @@ import "dotenv/config";
 const app = express();
 app.use(express.json());
 app.use(cors());
-const port = process.env.PORT;
+const port = process.env.PORT || 9000;
 
 app.get("/", (req, res) => {
     res.send("Rajapandi@111")
