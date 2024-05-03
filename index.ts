@@ -22,7 +22,7 @@ const options: any = {
 
 console.log(process.env.DB_URL);
 
-mongoose.connect(process.env.DB_URL, {}).then(() => console.log("DB Connected")).catch((err) => console.log("err", err));
+mongoose.connect(process.env.DB_URL!, {}).then(() => console.log("DB Connected")).catch((err) => console.log("err", err));
 
 app.use("/api/user/auth", LoginUserRouter)
 app.use("/api/user", Middleware.loginMiddleware, UserRouter)
