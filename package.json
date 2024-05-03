@@ -2,7 +2,7 @@
   "name": "backend_service",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
     "preserve": "npm run build",
