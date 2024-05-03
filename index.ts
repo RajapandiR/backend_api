@@ -15,6 +15,10 @@ app.get("/api/raja", (req, res) => {
     res.send("Pandi@111")
 })
 
+app.get("/api/ping", (req, res) => {
+    res.send("Pong@111")
+})
+
 const options: any = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
