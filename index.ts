@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
     res.send("Rajapandi@111")
 })
 
-app.get("/raja", (req, res) => {
+app.get("/api/raja", (req, res) => {
     res.send("Pandi@111")
 })
 
