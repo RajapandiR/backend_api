@@ -19,6 +19,9 @@ const options: any = {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
 };
+
+console.log(process.env.DB_URL);
+
 mongoose.connect(process.env.DB_URL).then(() => console.log("DB Connected")).catch((err) => console.log("err", err));
 
 app.use("/api/user/auth", LoginUserRouter)
